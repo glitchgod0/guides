@@ -1,0 +1,53 @@
+---
+title: Mover archivos del juego
+slug: "es/rb3pc/advanced/movedir"
+description: "Como mover los archivos de Rock Band 3 a otro lugar, fuera de donde esta el emulador."
+tableOfContents: false
+---
+import dirfolder from '@assets/rb3/rpcs3/advanced/dir/dirfolder.png';
+import dircut from '@assets/rb3/rpcs3/advanced/dir/dircut.png';
+import dirpaste from '@assets/rb3/rpcs3/advanced/dir/dirpaste.gif';
+import dirrpcs3 from '@assets/rb3/rpcs3/advanced/dir/dirrpcs3es.png';
+import dirvfsadd from '@assets/rb3/rpcs3/advanced/dir/dirvfsaddes.png';
+import dirfoldersel from '@assets/rb3/rpcs3/advanced/dir/dirfoldersel.png';
+import dirvfssave from '@assets/rb3/rpcs3/advanced/dir/dirvfssavees.png';
+import { Image } from 'astro:assets';
+import { Steps } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="caution">Esto es algo para usuarios avanzados. **¡Se puede romper to juego!**</Aside>
+
+Si los archivos de Rock Band 3 están tomando mucho espacio en tu disco primario, puedes moverlos a otro disco mientras el emulador se quede en tu disco primario.  
+Antes de empezar, cierra RPCS3.
+<Steps>
+1. Primero, crea una carpeta donde vas a mover los archivos.  
+En las capturas, yo nombre la carpeta <span title="Directorio de RPCS3">"<code>RPCS3 Directory</code>"</span>.
+	> <Image src={dirfolder} alt="Una carpeta llamada 'RPCS3 Directory'." />
+
+2. Ahora, en la carpeta donde esta RPCS3, corta estas carpetas:
+	* `dev_bdvd`
+	* `dev_flash`
+	* `dev_flash2`
+	* `dev_flash3`
+	* `dev_hdd0`
+	* `dev_hdd1`
+	* `dev_usb000`
+	* `games`
+	> <Image src={dircut} alt="Las carpetas siendo cortadas." />
+
+3. Pega las carpetas en la carpeta que creaste.
+	<Image src={dirpaste} alt="Las carpetas que fueron cortadas siendo pegadas en la carpeta 'RPCS3 Directory'." />
+
+4. Cuando termine de mover los archivos, abre RPCS3 y haz click en `Administración > Sistema virtual de archivos`
+	<Image src={dirrpcs3} alt="RPCS3 con el cursor sobre 'Sistema virtual de archivos', bajo la categoria de 'Administración'." />
+
+5. En la pantalla de `Sistema virtual de archivos`, haz click en símbolo `+` hacia la parte inferior derecha.
+	> <Image src={dirvfsadd} alt="Dentro de la configuración de Sistema virtual de archivos con el cursor sobre el símbolo +." />
+
+6. Busca la carpeta que creaste, selecciónala, y haz click a `Elegir carpeta`.
+	> <Image src={dirfoldersel} alt="La carpeta creada siendo elegida." />
+
+7. Finalmente, activa la nueva carpeta con el tic y haz click en `Guardar`.
+	> <Image src={dirvfssave} alt="La carpeta creada en la lista de EmulatorDir." />
+</Steps>
+¡Eso es todo! Ahora, RPCS3 usara esta carpeta para cargar archivos.

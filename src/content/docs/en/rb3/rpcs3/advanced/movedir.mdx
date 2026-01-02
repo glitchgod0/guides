@@ -1,0 +1,53 @@
+---
+title: Move Game Files
+slug: "en/rb3pc/advanced/movedir"
+description: "How to move Rock Band 3's files to a different location than the emulator."
+tableOfContents: false
+---
+import dirfolder from '@assets/rb3/rpcs3/advanced/dir/dirfolder.png';
+import dircut from '@assets/rb3/rpcs3/advanced/dir/dircut.png';
+import dirpaste from '@assets/rb3/rpcs3/advanced/dir/dirpaste.gif';
+import dirrpcs3 from '@assets/rb3/rpcs3/advanced/dir/dirrpcs3.png';
+import dirvfsadd from '@assets/rb3/rpcs3/advanced/dir/dirvfsadd.png';
+import dirfoldersel from '@assets/rb3/rpcs3/advanced/dir/dirfoldersel.png';
+import dirvfssave from '@assets/rb3/rpcs3/advanced/dir/dirvfssave.png';
+import { Image } from 'astro:assets';
+import { Steps } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="caution">This is meant for advanced users only. **Your game and installation may break!**</Aside>
+
+If Rock Band 3's files are taking up too much space on your main drive, you can move them to a different drive while keeping RPCS3 itself on your main drive.  
+Make sure RPCS3 is closed before starting this.
+<Steps>
+1. First, create a folder where all of this stuff will be moved to.  
+The folder will be named `RPCS3 Directory` in this tutorial.
+	> <Image src={dirfolder} alt="A folder named 'RPCS3 Directory'." />
+
+2. Back in the folder RPCS3 is in, cut the following folders:
+	* `dev_bdvd`
+	* `dev_flash`
+	* `dev_flash2`
+	* `dev_flash3`
+	* `dev_hdd0`
+	* `dev_hdd1`
+	* `dev_usb000`
+	* `games`
+	> <Image src={dircut} alt="The folders listed being cut." />
+
+3. Paste them into the folder you created.
+	<Image src={dirpaste} alt="The folders that were cut being pasted into the 'RPCS3 Directory' folder." />
+
+4. When it finishes pasting, reopen RPCS3 then click on `Manage > Virtual File System`
+	<Image src={dirrpcs3} alt="RPCS3 with the user hovering over 'Virtual File System', under the 'Manage' category." />
+
+5. In the `Virtual File System` window, click on the `+` symbol near the bottom right.
+	> <Image src={dirvfsadd} alt="RPCS3's Virtual File System Menu showing the cursor hovering over the plus symbol at the bottom." />
+
+6. Go to the folder you created, click on it, and then click on `Select Folder`.
+	> <Image src={dirfoldersel} alt="RPCS3's 'Choose a directory' window, selecting the created folder." />
+
+7. Finally, enable the new folder with the checkmark then click `Save`.
+	> <Image src={dirvfssave} alt="RPCS3's 'Choose a directory' window selecting the created folder." />
+</Steps>
+That's it! RPCS3 will now use this folder.
