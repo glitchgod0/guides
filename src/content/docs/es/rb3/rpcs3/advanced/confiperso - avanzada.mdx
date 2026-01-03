@@ -1,0 +1,24 @@
+---
+title: "Configuración personalizada: Avanzada"
+slug: "es/rb3pc/customconfig/advanced"
+description: "Que cambiar bajo la pestaña Avanzada dentro de la configuración personalizada de RPCS3."
+template: splash
+tableOfContents: false
+sidebar:
+  hidden: true
+---
+import advanced from '@assets/rb3/rpcs3/config/advancedes.png';
+import { Image } from 'astro:assets';
+
+<Image src={advanced} alt="La configuración personalizada de Sistema de Rock Band 3." />
+
+* ![Un cuadro azul con contorno punteado.](/assets/rb3pc/config/smallblue.png "Cuadro azul") **Depende de tu computadora**: 
+	* **Cambia `Precisión del FIFO de RSX`** a `Rápida` - Puede ayudar a reducir latencia pero necesita mas pruebas.  
+	**Si estas usando `Rápida`, necesitas configurar `Retardo para llamar al controlador` a `20µs` o mas!**
+	* **Cambia `Retardo para llamar al controlador` a `20µs`** si tu juego se congela luego de algunas canciones si estas usando Precisión del FIFO de RSX `Rápida`.  
+	Auméntalo a `40µs` si sigue pasando. Si todavía sigue pasando (muy raro), auméntalo en incrementos de 20µs.
+
+* ![Un cuadro bronceado con un contorno solido.](/assets/rb3pc/config/smalltan.png "Cuadro bronceado") **Recomendado**: 
+	* **Activa `Modo de consola de depuración`** - Esto con Rock Band 3 Deluxe deja que Rock Band 3 tenga accesible a mas memoria. Esto ayuda con la estabilidad y te deja instalar hasta 16000 canciones. **¡Todos deben de activar esto!** [[Haz click aquí para mas información.]](../advanced/memory//)
+	* **Cambia `Pantalla completa exclusiva` a `Preferir pantalla completa sin bordes`** para prevenir posibles crasheos o desincronización al cambiar la prioridad del programa.
+	* **Alterna `Utilizar memoria Re-BAR para envíos de la GPU` depende de tu gráfica**. Esto puede aumentar rendimiento por mucho si tienes una gráfica con Re-BAR y si Re-BAR esta activado en tus BIOS! ¡Lee los manuales de tu gráfica o BIOS para mas información!

@@ -1,0 +1,21 @@
+---
+title: "Custom Configuration: CPU"
+slug: "en/rb3pc/customconfig/cpu"
+description: "What to change for Rock Band 3 under the CPU tab in RPCS3's Custom Configuration."
+template: splash
+tableOfContents: false
+sidebar:
+  hidden: true
+---
+import cpu from '@assets/rb3/rpcs3/config/cpu.png';
+import { Image } from 'astro:assets';
+
+<Image src={cpu} alt="Rock Band 3's CPU custom settings." />
+
+* ![A blue square with a dotted outline.](/assets/rb3pc/config/smallblue.png "Blue Square") **Improved performance, depending on machine**: 
+	* **Change `SPU Block Size` to `Mega`** - Ties smaller SPU compiled together, which can help machines with fewer cores/threads.  
+	Drastically speeds up game startup time on certain machines.
+	* **Change `Preferred SPU Threads` to `1`, `2`, `3`, or `4`** - May help prevent stutter caused by CPU overloads on systems with fewer cores/threads.  
+	**Start at `4` and lower it one by one until it improves**.
+	* **Change `Thread Scheduler` to `RPCS3 Scheduler`, or `RPCS3 Alternative Scheduler`** - **FOR CPUs WITH 12+ THREADS ONLY!**  
+	May help with thread distribution to prevent microstutters.

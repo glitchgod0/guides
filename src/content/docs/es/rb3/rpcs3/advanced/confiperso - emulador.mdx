@@ -1,0 +1,25 @@
+---
+title: "Configuración personalizada: Emulador"
+slug: "es/rb3pc/customconfig/emulator"
+description: "Que cambiar bajo la pestaña Emulador dentro de la configuración personalizada de RPCS3."
+template: splash
+tableOfContents: false
+sidebar:
+  hidden: true
+---
+import emulator from '@assets/rb3/rpcs3/config/emulatores.png';
+import { Image } from 'astro:assets';
+
+<Image src={emulator} alt="La configuración personalizada de Emulador de Rock Band 3." />
+
+Puedes dejar esto como quieras, pero revisa estas opciones:
+* ![Un cuadro bronceado con un contorno solido.](/assets/rb3pc/config/smalltan.png "Cuadro azul") **Opcional**: 
+	* **`Mensajes de trofeos`** - Simula la notificación de trofeos de la PS3.
+	* **`Mensajes de RPCN`** - Muestra notificaciones cuando tu o tus amigos inicien sesión en linea por RPCN.
+	* **`Mensajes de compilación de shaders`** - Muestra una notificación cuando RPCS3 esta compilando shaders. Cuando juegas en RPCS3, tiene que compilar shaders para "convertir" gráficas de una PS3 a un formato de PC pueda usar. **El juego seguirá trabándose mientras esto pase. Esto pasa en TODAS las PC's.** Cuando termine de compilar un efecto, **esto usualmente ya no vuelve a pasar otra vez. La mejor forma de lidiar con esto es** simplemente **jugar el juego normalmente** y luego se ira rápidamente.  
+	También puedes activar el modo de "Autoplay" y dejar que el juego reproduzca unas canciones para compilar shaders.
+	* **`Mensajes de compilación de la PPU`** - Muestra una notificación cuando RPCS3 esta compile unidades de PPU. Esto solo sale al inicio si tu estas en una configuración recomendada.
+	* **`Mensajes de alt. ratón y teclado`** - Muestra notificaciones cuando cambias entre usar el teclado para el juego o para escribir en el teclado virtual dentro del juego.
+	* **`Mostrar indicaciones de capturas`** - Muestra una notificación cuando tomes una captura dentro del emulador.
+	* **`Arrancar juegos a pantalla completa`** - Cambia a modo de pantalla completa cuando inicies el juego.
+	* **`Utilizar interfaz nativa`** - Si desactivas esto, no tendrás la interfaz para las todas las notificaciones de RPCS3 mientras estás jugando, incluyendo el teclado y fondo mientra el juego cargue. En su lugar, verás una interfaz más antigua. Puede ayudar si tu juego se trababa cuando estés nombrando algo con ciertos instrumentos.

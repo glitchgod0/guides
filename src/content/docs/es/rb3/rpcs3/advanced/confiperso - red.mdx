@@ -1,0 +1,21 @@
+---
+title: "Configuración personalizada: Red"
+slug: "es/rb3pc/customconfig/network"
+description: "Que cambiar bajo la pestaña de Red dentro de la configuración personalizada de RPCS3."
+template: splash
+tableOfContents: false
+sidebar:
+  hidden: true
+---
+import network from '@assets/rb3/rpcs3/config/networkes.png';
+import { Image } from 'astro:assets';
+
+<Image src={network} alt="La configuración personalizada de Red para Rock Band 3." />
+
+* ![Un cuadro verde con una línea discontinua.](/assets/rb3pc/config/smallgreen.png "Cuadro verde") **REQUERIDO**: 
+	* **Cambia `Configuración de red` a `Conectado`. Si lo dejas en `Desconectado`, el juego se congelara navegando tu biblioteca de canciones.**
+
+* ![Un cuadro bronceado con un contorno solido.](/assets/rb3pc/config/smalltan.png "Cuadro bronceado") **Para jugar en linea**: 
+	* Para jugar Rock Band 3 en linea, agrega la dirección IP de Rock Band Enhanced.
+		* Cambia `Cambia de IP/Hosts` a `rb3ps3live.hmxservices.com=45.33.44.103`.
+	* Puedes ponerle tic a **`Activar UPNP`** o **reenvía el puerto 9103 (UDP) en tu cortafuegos**. - Esto es necesario para jugar con mas de 2 jugadores.

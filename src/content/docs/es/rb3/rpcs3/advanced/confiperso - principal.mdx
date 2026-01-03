@@ -1,0 +1,185 @@
+---
+title: "Configuración personalizada"
+slug: "es/rb3pc/customconfig/main"
+description: "Como crear o editar una configuración personalizada de RPCS3."
+tableOfContents: false
+---
+import rpcs3customconfigchange from '@assets/rb3/rpcs3/config/rpcs3customconfigchangees.png';
+import rpcs3customconfig from '@assets/rb3/rpcs3/config/rpcs3customconfiges.png';
+import save from '@assets/rb3/rpcs3/config/savees.png';
+import cpu from '@assets/rb3/rpcs3/config/cpues.png';
+import gpu from '@assets/rb3/rpcs3/config/gpues.png';
+import audio from '@assets/rb3/rpcs3/config/audioes.png';
+import io from '@assets/rb3/rpcs3/config/ioes.png';
+import system from '@assets/rb3/rpcs3/config/systemes.png';
+import network from '@assets/rb3/rpcs3/config/networkes.png';
+import advanced from '@assets/rb3/rpcs3/config/advancedes.png';
+import emulator from '@assets/rb3/rpcs3/config/emulatores.png';
+import { Image } from 'astro:assets';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
+
+Esta pagina es para usuarios avanzados que quieran ajustar ciertas cosas de la configuración personalizada de Rock Band 3.  
+Esta pagina puede ser demasiada técnica en partes.
+
+<Tabs>
+  <TabItem label="Cambiando una configuración personalizada">
+Si quieres cambiar una configuración personalizada (como la que instalaste de <a href="../../intro/quickconfig/" target="_blank" rel="noopener noreferrer">[la pagina de Configuración rápida]</a>), **haz click derecho en Rock Band 3** dentro de RPCS3 y luego en `Cambiar configuración personalizada`.  
+<Image src={rpcs3customconfigchange} alt="El menú de clic derecho de Rock Band 3 dentro de RPCS3 mostrando un cursor sobre 'Cambiar configuración personalizada'." />
+</TabItem>
+  <TabItem label="Creando una configuración personalizada">
+Si no tienes una configuración personalizada, **haz click derecho en Rock Band 3** dentro de RPCS3 y luego en `Crear configuración personalizada partir de la predeterminada`.  
+<Image src={rpcs3customconfig} alt="El menú de clic derecho de Rock Band 3 dentro de RPCS3 mostrando un cursor sobre 'Crear configuración personalizada partir de la predeterminada'." />
+  </TabItem>
+</Tabs>
+
+**¡Recuerda de hacer click en `Aplicar` y luego en `Guardar configuración personalizada` después de hacer ajustes!**  
+Toma en cuenta que vas a necesitar reiniciar el juego para aplicar mayoría de estos ajustes.  
+<Image src={save} alt="La configuración personalizada de Rock Band 3 dentro de RPCS3 con el ratón sobre 'Guardar configuración personalizada'." />
+
+## Guía de colores
+Para hacer todo mas fácil, todos los ajustes han sido colorados.  
+**Todo lo que no esté coloreado debe estar en las opciones predeterminadas.**
+
+| COLOR | SIGNIFICADO |
+|:-----:|:-------:|
+| ![Un cuadro verde con una línea discontinua.](/assets/rb3pc/config/biggreen.png "Cuadro verde") | **REQUERIDO** |
+| ![Un cuadro azul con contorno punteado.](/assets/rb3pc/config/bigblue.png "Cuadro azul") | **Ajustes de rendimiento** |
+| ![Un cuadro bronceado con un contorno solido.](/assets/rb3pc/config/bigtan.png "Cuadro bronceado") | **Recomendado** |
+
+## Configuración Personalizada
+<Tabs>
+  <TabItem label="CPU">
+<Image src={cpu} alt="La configuración personalizada de CPU para Rock Band 3." />
+
+* ![Un cuadro azul con contorno punteado.](/assets/rb3pc/config/smallblue.png "Cuadro azul") **Mejor rendimiento, dependiendo de tu sistema**: 
+  * **Cambia `Tamaño del bloque de la SPU` a `Mega`** - Junta hilos de SPU para ser más pequeños, requiriendo menos núcleos/hilos.  
+  Hace que el juego abra mas rápido en varios sistemas.
+  * **Cambia `N.° preferido de hilos asignados a la SPU` a `1`, `2`, `3` o `4`** - Puede ayudar a CPUs con pocos núcleos/hilos.  
+  **Empieza con `4` y bájalo por uno hasta que mejore**.
+  * **Cambia `Programador de hilos` a `Programador de subprocesos de RPCS3` o `Programador alternativo de RPCS3`** - **¡SOLO PARA CPUs CON MÁS DE 12 HILOS!**  
+  Esto puede ayudar con la distribución de procesos, resultando en menos microtirones.
+</TabItem>
+  <TabItem label="GPU">
+<Image src={gpu} alt="La configuración personalizada de GPU para Rock Band 3." />
+
+* ![Un cuadro verde con una línea discontinua.](/assets/rb3pc/config/smallgreen.png "Cuadro verde") **REQUERIDO**: 
+  * **Activa `Escribir búferes de color`** - Si no activas esto, los personajes tendrán rendimiento roto.
+
+* ![Un cuadro azul con contorno punteado.](/assets/rb3pc/config/smallblue.png "Cuadro azul") **Depende de tu gráfica**: 
+  * **Ajusta `Escala de resolución`** para aumentar la resolución del juego. Resoluciones mas altas requieren mas recursos de la gráfica.  
+  Resoluciones bajo de 100% casi no ayudan con rendimiento.
+  * **Ajusta `Escalar imagen de salida`** a tu gusto y a lo que puede tu computadora. Esto afecta cómo se va "estirar" la imagen para llegar a la resolución de tu pantalla usando diferentes métodos de interpolación. Puede ayudar a los que tienen su nivel de resolución (mencionado arriba) en 100%.
+    * `Vecino más cercano` es la interpolación mas cruda. Si la resolución del juego no es exacta a la de tu pantalla, puede resultar en pixelización.
+    * `Bilineal` es una interpolación mas suave. Si la resolución del juego no es exacta a la de tu pantalla, puede resultar en una imagen borrosa.
+    * `FidelityFX Super Resolution 1` (FSR1) usa un algoritmo complejo para mejorar la imagen cuando se estira a la resolución de tu pantalla. Raramente, puede causar anormalidades en la imagen.
+      * Puedes usar `Fuerza del realzado de RCAS` abajo para ajustar la fuerza del efecto.
+  * **Cambia `Limit. fotogramas`**
+    * Déjalo en `Auto` para que RPCS3 elija la tasa de fotogramas.
+    * Cámbialo a `Desactivado` **si estas usando `Sincronización vertical` o un limitado de fotogramas externo**.
+    * `120` es recomendado si estas usando un monitor de 144Hz (o mas.)
+    * Cámbialo a `Pantalla` si quieres usar la taza de tu monitor.
+    * **¡NO ELIJAS fotogramas bajo de `60`!**
+    * Mas fotogramas requieren mas recursos. Toma esto en cuenta si estas en un sistema de baja gama.
+    * Esta sugerido que desactives "Sinc. Vertical" dentro de Rock Band 3 Deluxe: `Menú > Opciones > Configuración Deluxe > Opciones de escenarios > Gráficos > Avanzado`.
+  * **Activa `Sincronización vertical`** - Evita fragmentación de imagen pero tendrás un poco mas latencia. Se recomienda usar el VSync de tu los controladores de tu gráfica.  
+  **No actives `Sincronización vertical` si activaste `Limit. fotogramas`**.
+  * **Ajusta `Filtro anisotrópico`**. - Mejora nitidez de texturas en un angulo y a distancia. Mayoría de las gráficas dedicadas pueden con `x16`.
+  * **Cambia `Precisión de ZCULL` to `Relajada`** - Mejora el rendimiento pero causa que objetos se vean raros en ángulos de cámara distantes.
+  * **Ajusta `Calidad de shaders`** a preferencia. - Cambiando esto a `Bajo` mejora rendimiento sin ningún cambio visual.
+  * **Activa `RSX multihilo`** si tienes una computadora con suficientes núcleos/hilos.  
+  Esto mueve ciertas operaciones del RSX (la grafica en la PS3) a otros núcleos/hilos.
+  * **Activa `Transmisión asíncrona de texturas`** si tienes una computadora de alta gama, estas usando Vulkan y activaste `RSX multihilo`.  
+  Esto transfiere texturas en un hilo paralelo y puede ayudar con rendimiento.
+  * Cambia `Renderizador` depende de tu computadora. Esto esa a mero abajo porque **esto no es recomendado para mayoría de las personas**.  
+  Solo personas en computadoras de ultra baja gama deben de cambiar esto a `OpenGL`.
+</TabItem>
+  <TabItem label="Audio">
+<Image src={audio} alt="La configuración personalizada de audio de Rock Band 3." />
+
+* ![Un cuadro azul con contorno punteado.](/assets/rb3pc/config/smallblue.png "Cuadro azul") **Ajusta depende de tu computadora**:
+  * Deja `Activar búfer` si prefieres estabilidad de sonido al precio de tener mas latencia.  
+  Desactívala si quieres menos latencia con probabilidad de errores de sonido.
+  * **Ajusta `Duración de búfer de audio`** depende de tu sistema. Esto solo funciona si tienes `Activar búfer` prendido!
+    * Bájale lo mas que puedas antes de que empiezas a escuchar errores con el sonido. Empieza con `32 ms` y ajusta de ahí.
+      * Valores bajos = menos latencia pero se usa mas CPU.
+      * Valores altos = mas latencia pero usa menos CPU.
+    * Vocalistas son los más afectados por esto porque latencia alta crea un eco. Los jugadores de instrumentos pueden usar la calibración para compensar.
+    * ¡Esto se puede cambiar mientras el juego esta abierto!
+    * **Si cambias esto, vas a necesitar recalibrar en los ajustes del sistema de Rock Band 3**.
+  * **Cambia `Salida de audio` a `XAudio2`** - En ocasiones raras, puede ayudar. **Mayoría de las personas deben de quedarse en `Cubeb`**.
+
+* ![Un cuadro bronceado con un contorno solido.](/assets/rb3pc/config/smalltan.png "Cuadro bronceado") **Cambia depende de tu sistema de sonido**: 
+  * **Para vocalistas:**
+    * **Cambia `Tipo de micrófono` to `Estándar`**.
+    * **Elige los dispositivos que se ocupan como micrófonos en las ranuras de `Mic1`, `Mic2` y `Mic3`**.  
+    Si no estas en vocales, `Mic1` se usara para la chat de voz.
+  * **Cambia `Salida de sonido`** si quieres usar un dispositivo que no sea el predeterminado.
+  * Cambia `Formato de salida de audio` si estas usando un sistema de sonido Surround.  
+  Rock Band 3 puedo con formatos de LPCM 2.0, LPCM 5.1 y Dolby Digital 5.1 (**¡NO SE RECOMIENDA!**).
+</TabItem>
+  <TabItem label="E/S">
+<Image src={io} alt="La configuración personalizada de E/S de Rock Band 3." />
+
+**Asegúrate que tu instrumento de MIDI este conectado.**  
+**Haz la ventana mas grande si no puedes leer las opciones.**
+
+* ![Un cuadro azul con contorno punteado.](/assets/rb3pc/config/smallblue.png "Cuadro azul") **Ajustes de rendimiento**:
+  * **Cambia `Modo del controlador de mandos` a `Multihilo`** si tienes una CPU con mas de 12 hilos/núcleos.  
+  Puede ayudar con rendimiento.
+
+* ![Un cuadrado bronceado.](/assets/rb3pc/config/smalltan.png "Cuadrado bronceado") **Recomendado**:
+  * **Deja `controlador de Teclado` en `Básico`** para usar funciones de teclado dentro de Rock Band 3 Deluxe.
+  * 🎹 **[[Jugadores con teclado MIDI]](../../controllers/keys/midi/): Deja `Dispositivo MIDI emulado` en `Teclado` y elige tu teclado MIDI o interfaz de MIDI en el otro menú**.
+  * 🥁 **[[Jugadores con baterías MIDI]](../../controllers/drums/midi/): Cambia `Dispositivo MIDI emulado` de `Teclado` a `Batería` y elige tu batería MIDI o interfaz de MIDI en el otro menú.**.
+  * 🎸 **[[Jugadores con guitarra PRO]](../../controllers/protars/midi/): Cambia `Dispositivo MIDI emulado` de `Teclado` a `Guitarra (17 trastes)` si tienes una guitarra Mustang PRO o `Guitarra (22 trastes)` si tienes la Squier Stratocaster PRO y elige tu interfaz de MIDI en el otro menú**.
+    * Si necesitas mas ayuda, dale otra visita a la [[pagina de instrumentos]](../../controllers/main/).
+</TabItem>
+  <TabItem label="Sistema">
+<Image src={system} alt="La configuración personalizada de Sistema de Rock Band 3." />
+
+* ![Un cuadrado bronceado.](/assets/rb3pc/config/smalltan.png "Cuadrado bronceado") **Para cambiar el lenguaje del juego**:
+  * **Cambia `Idioma del consola` a `Español`** para cambiar el idioma de Rock Band 3 de Ingles a Español.
+  * **Cambia `Tipo de teclado` a `Teclado español`** para cambiar el teclado virtual de Ingles a Español.
+</TabItem>
+  <TabItem label="Red">
+<Image src={network} alt="La configuración personalizada de Red para Rock Band 3." />
+
+* ![Un cuadro verde con una línea discontinua.](/assets/rb3pc/config/smallgreen.png "Cuadro verde") **REQUERIDO**: 
+  * **Cambia `Configuración de red` a `Conectado`. Si lo dejas en `Desconectado`, el juego se congelara navegando tu biblioteca de canciones.**
+
+* ![Un cuadro bronceado con un contorno solido.](/assets/rb3pc/config/smalltan.png "Cuadro bronceado") **Para jugar en linea**: 
+  * Para jugar Rock Band 3 en linea, agrega la dirección IP de Rock Band Enhanced.
+    * Cambia `Cambia de IP/Hosts` a `rb3ps3live.hmxservices.com=45.33.44.103`.
+  * Puedes ponerle tic a **`Activar UPNP`** o **reenvía el puerto 9103 (UDP) en tu cortafuegos**. - Esto es necesario para jugar con mas de 2 jugadores.
+</TabItem>
+  <TabItem label="Avanzado">
+<Image src={advanced} alt="La configuración personalizada de Sistema de Rock Band 3." />
+
+* ![Un cuadro azul con contorno punteado.](/assets/rb3pc/config/smallblue.png "Cuadro azul") **Depende de tu computadora**: 
+  * **Cambia `Precisión del FIFO de RSX`** a `Rápida` - Puede ayudar a reducir latencia pero necesita mas pruebas.  
+  **Si estas usando `Rápida`, necesitas configurar `Retardo para llamar al controlador` a `20µs` o mas!**
+  * **Cambia `Retardo para llamar al controlador` a `20µs`** si tu juego se congela luego de algunas canciones si estas usando Precisión del FIFO de RSX `Rápida`.  
+  Auméntalo a `40µs` si sigue pasando. Si todavía sigue pasando (muy raro), auméntalo en incrementos de 20µs.
+
+* ![Un cuadro bronceado con un contorno solido.](/assets/rb3pc/config/smalltan.png "Cuadro bronceado") **Recomendado**: 
+  * **Activa `Modo de consola de depuración`** - Esto con Rock Band 3 Deluxe deja que Rock Band 3 tenga accesible a mas memoria. Esto ayuda con la estabilidad y te deja instalar hasta 16000 canciones. **¡Todos deben de activar esto!** [[Haz click aquí para mas información.]](../advanced/memory//)
+  * **Cambia `Pantalla completa exclusiva` a `Preferir pantalla completa sin bordes`** para prevenir posibles crasheos o desincronización al cambiar la prioridad del programa.
+  * **Alterna `Utilizar memoria Re-BAR para envíos de la GPU` depende de tu gráfica**. Esto puede aumentar rendimiento por mucho si tienes una gráfica con Re-BAR y si Re-BAR esta activado en tus BIOS! ¡Lee los manuales de tu gráfica o BIOS para mas información!
+</TabItem>
+  <TabItem label="Emulador">
+<Image src={emulator} alt="La configuración personalizada de Emulador de Rock Band 3." />
+
+Puedes dejar esto como quieras, pero revisa estas opciones:
+* ![Un cuadro bronceado con un contorno solido.](/assets/rb3pc/config/smalltan.png "Cuadro azul") **Opcional**: 
+  * **`Mensajes de trofeos`** - Simula la notificación de trofeos de la PS3.
+  * **`Mensajes de RPCN`** - Muestra notificaciones cuando tu o tus amigos inicien sesión en linea por RPCN.
+  * **`Mensajes de compilación de shaders`** - Muestra una notificación cuando RPCS3 esta compilando shaders. Cuando juegas en RPCS3, tiene que compilar shaders para "convertir" gráficas de una PS3 a un formato de PC pueda usar. **El juego seguirá trabándose mientras esto pase. Esto pasa en TODAS las PC's.** Cuando termine de compilar un efecto, **esto usualmente ya no vuelve a pasar otra vez. La mejor forma de lidiar con esto es** simplemente **jugar el juego normalmente** y luego se ira rápidamente.  
+  También puedes activar el modo de "Autoplay" y dejar que el juego reproduzca unas canciones para compilar shaders.
+  * **`Mensajes de compilación de la PPU`** - Muestra una notificación cuando RPCS3 esta compile unidades de PPU. Esto solo sale al inicio si tu estas en una configuración recomendada.
+  * **`Mensajes de alt. ratón y teclado`** - Muestra notificaciones cuando cambias entre usar el teclado para el juego o para escribir en el teclado virtual dentro del juego.
+  * **`Mostrar indicaciones de capturas`** - Muestra una notificación cuando tomes una captura dentro del emulador.
+  * **`Arrancar juegos a pantalla completa`** - Cambia a modo de pantalla completa cuando inicies el juego.
+  * **`Utilizar interfaz nativa`** - Si desactivas esto, no tendrás la interfaz para las todas las notificaciones de RPCS3 mientras estás jugando, incluyendo el teclado y fondo mientra el juego cargue. En su lugar, verás una interfaz más antigua. Puede ayudar si tu juego se trababa cuando estés nombrando algo con ciertos instrumentos.
+</TabItem>
+</Tabs>

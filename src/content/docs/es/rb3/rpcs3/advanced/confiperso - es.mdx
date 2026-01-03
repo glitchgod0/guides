@@ -1,0 +1,27 @@
+---
+title: "Configuración personalizada: E/S"
+slug: "es/rb3pc/customconfig/io"
+description: "Que cambiar bajo la pestaña de E/S dentro de la configuración personalizada de RPCS3."
+template: splash
+tableOfContents: false
+sidebar:
+  hidden: true
+---
+import io from '@assets/rb3/rpcs3/config/ioes.png';
+import { Image } from 'astro:assets';
+
+<Image src={io} alt="La configuración personalizada de E/S de Rock Band 3." />
+
+**Asegúrate que tu instrumento de MIDI este conectado.**  
+**Haz la ventana mas grande si no puedes leer las opciones.**
+
+* ![Un cuadro azul con contorno punteado.](/assets/rb3pc/config/smallblue.png "Cuadro azul") **Ajustes de rendimiento**:
+	* **Cambia `Modo del controlador de mandos` a `Multihilo`** si tienes una CPU con mas de 12 hilos/núcleos.  
+	Puede ayudar con rendimiento.
+
+* ![Un cuadrado bronceado.](/assets/rb3pc/config/smalltan.png "Cuadrado bronceado") **Recomendado**:
+	* **Deja `controlador de Teclado` en `Básico`** para usar funciones de teclado dentro de Rock Band 3 Deluxe.
+	* 🎹 **[[Jugadores con teclado MIDI]](../../controllers/keys/midi/): Deja `Dispositivo MIDI emulado` en `Teclado` y elige tu teclado MIDI o interfaz de MIDI en el otro menú**.
+	* 🥁 **[[Jugadores con baterías MIDI]](../../controllers/drums/midi/): Cambia `Dispositivo MIDI emulado` de `Teclado` a `Batería` y elige tu batería MIDI o interfaz de MIDI en el otro menú.**.
+	* 🎸 **[[Jugadores con guitarra PRO]](../../controllers/protars/midi/): Cambia `Dispositivo MIDI emulado` de `Teclado` a `Guitarra (17 trastes)` si tienes una guitarra Mustang PRO o `Guitarra (22 trastes)` si tienes la Squier Stratocaster PRO y elige tu interfaz de MIDI en el otro menú**.
+		* Si necesitas mas ayuda, dale otra visita a la [[pagina de instrumentos]](../../controllers/main/).

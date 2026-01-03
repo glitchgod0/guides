@@ -1,0 +1,34 @@
+---
+title: "Configuración personalizada: Audio"
+slug: "es/rb3pc/customconfig/audio"
+description: "Que cambiar bajo la pestaña de Audio dentro de la configuración personalizada de RPCS3."
+template: splash
+tableOfContents: false
+sidebar:
+  hidden: true
+---
+import audio from '@assets/rb3/rpcs3/config/audioes.png';
+import { Image } from 'astro:assets';
+
+<Image src={audio} alt="La configuración personalizada de audio de Rock Band 3." />
+
+* ![Un cuadro azul con contorno punteado.](/assets/rb3pc/config/smallblue.png "Cuadro azul") **Ajusta depende de tu computadora**:
+	* Deja `Activar búfer` si prefieres estabilidad de sonido al precio de tener mas latencia.  
+	Desactívala si quieres menos latencia con probabilidad de errores de sonido.
+	* **Ajusta `Duración de búfer de audio`** depende de tu sistema. Esto solo funciona si tienes `Activar búfer` prendido!
+		* Bájale lo mas que puedas antes de que empiezas a escuchar errores con el sonido. Empieza con `32 ms` y ajusta de ahí.
+			* Valores bajos = menos latencia pero se usa mas CPU.
+			* Valores altos = mas latencia pero usa menos CPU.
+		* Vocalistas son los más afectados por esto porque latencia alta crea un eco. Los jugadores de instrumentos pueden usar la calibración para compensar.
+		* ¡Esto se puede cambiar mientras el juego esta abierto!
+		* **Si cambias esto, vas a necesitar recalibrar en los ajustes del sistema de Rock Band 3**.
+	* **Cambia `Salida de audio` a `XAudio2`** - En ocasiones raras, puede ayudar. **Mayoría de las personas deben de quedarse en `Cubeb`**.
+
+* ![Un cuadro bronceado con un contorno solido.](/assets/rb3pc/config/smalltan.png "Cuadro bronceado") **Cambia depende de tu sistema de sonido**: 
+	* **Para vocalistas:**
+		* **Cambia `Tipo de micrófono` to `Estándar`**.
+		* **Elige los dispositivos que se ocupan como micrófonos en las ranuras de `Mic1`, `Mic2` y `Mic3`**.  
+		Si no estas en vocales, `Mic1` se usara para la chat de voz.
+	* **Cambia `Salida de sonido`** si quieres usar un dispositivo que no sea el predeterminado.
+	* Cambia `Formato de salida de audio` si estas usando un sistema de sonido Surround.  
+	Rock Band 3 puedo con formatos de LPCM 2.0, LPCM 5.1 y Dolby Digital 5.1 (**¡NO SE RECOMIENDA!**).

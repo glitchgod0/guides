@@ -1,0 +1,27 @@
+---
+title: "Custom Configuration: I/O"
+slug: "en/rb3pc/customconfig/io"
+description: "What to change for Rock Band 3 under the I/O tab in RPCS3's Custom Configuration."
+template: splash
+tableOfContents: false
+sidebar:
+  hidden: true
+---
+import io from '@assets/rb3/rpcs3/config/io.png';
+import { Image } from 'astro:assets';
+
+<Image src={io} alt="Rock Band 3's I/O custom settings." />
+
+**Make sure your MIDI instrument is connected.**. 
+**YOU MAY HAVE TO MAKE THE WINDOW WIDER TO READ THE OPTIONS!**
+
+* ![A blue square with a dotted outline.](/assets/rb3pc/config/smallblue.png "Tan Square") **Performance Tweaks**:
+	* **Change `Pad Handler Mode` to `Multi-threaded`** - Only change this if you have plenty of cores/threads.  
+	May help improve performance.
+
+* ![A tan square with a solid outline.](/assets/rb3pc/config/smalltan.png "Tan Square") **Recommended**:
+	* **Leave `Keyboard Handler` on `Basic`** to use Rock Band 3 Deluxe's keyboard functions.
+	* 🎹 **[[MIDI Keyboard Players]](../../controllers/keys/midi/): Leave your `Emulated MIDI type` on `Keyboard` and select your keyboard or MIDI interface in the drop-down menu next to it**.
+	* 🥁 **[[MIDI Drums Players]](../../controllers/drums/midi/): Change your `Emulated MIDI type` from `Keyboard` to `Drums`, then select your MIDI Drum Kit or MIDI to USB interface in the drop-down menu next to it**.
+	* 🎸 **[[MIDI Pro Guitar Players]](../../controllers/protars/midi/): Change your `Emulated MIDI type` from `Keyboard` to `Guitar (17 Frets)` if you have a Mustang Pro Guitar, or `Guitar (22 Frets)` if you have a Squier Pro Guitar, then select your MIDI to USB interface in the drop-down menu next to it**.
+		* Revisit the [[Controllers page]](../../controllers/main/) if you need help.

@@ -1,0 +1,21 @@
+---
+title: "Custom Configuration: Network"
+slug: "en/rb3pc/customconfig/network"
+description: "What to change for Rock Band 3 under the Network tab in RPCS3's Custom Configuration."
+template: splash
+tableOfContents: false
+sidebar:
+  hidden: true
+---
+import network from '@assets/rb3/rpcs3/config/network.png';
+import { Image } from 'astro:assets';
+
+<Image src={network} alt="Rock Band 3's Network custom settings." />
+
+* ![A green square with a dashed outline.](/assets/rb3pc/config/smallgreen.png "Green Square") **REQUIRED**: 
+	* **Change `Network Status` to `Connected`. - If left on `Disconnected`, the game will temporarily freeze when browsing the song library.**
+
+* ![A tan square with a solid outline.](/assets/rb3pc/config/smalltan.png "Tan Square") **For online multiplayer**: 
+	* To play Rock Band 3 online, add Rock Band Enhanced's Server IP.
+		* Set `IP/Hosts switches` to `rb3ps3live.hmxservices.com=45.33.44.103`.
+		* Either tick **`Enable UPNP`** or **forward port 9103 (UDP) in your firewall**. - This is necessary to play with more than 2 players.
