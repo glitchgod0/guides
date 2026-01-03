@@ -22,7 +22,7 @@ export default defineConfig({
         replacesTitle: true,
       },
       social: [
-        { icon: 'seti:firefox', label: 'Website', href: 'https://milohax.org/' },
+        { icon: 'information', label: 'Website', href: 'https://milohax.org/' },
         { icon: 'discord', label: 'Discord', href: 'https://discord.gg/milohax' },
         { icon: 'github', label: 'GitHub', href: 'https://github.com/hmxmilohax' },
         { icon: 'youtube', label: 'YouTube', href: 'https://www.youtube.com/@MiloHax' },
@@ -40,6 +40,10 @@ export default defineConfig({
         {
           label: 'Rock Band 3 + RPCS3',
           autogenerate: { directory: 'rb3/rpcs3', },
+        },
+        {
+          label: 'Charting',
+          autogenerate: { directory: 'charting/', },
         },
       ],
 
